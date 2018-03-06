@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+</head>
+<body>
+<h1>Hello World!</h1>
+<p>This is {{ html_var }} coming through</p>
+<p>
+{% if bool_item %}
+this is a random {{ num }}
+{% endif %}
+</p>
+<p>
+{% for some_item in some_list %}
+	{% if some_item|divisibleby:"2" %}
+		Even number
+	{% endif %}
+{{ some_item }} <br>
+{% endfor %}
+</p>
+
+</body>
+</html>
