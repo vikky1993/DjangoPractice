@@ -19,9 +19,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 
-from navaneethaedu.views import home
+from navaneethaedu.views import HomeView, AboutView
 
 urlpatterns = [
-	url(r'^$', home),
+	url(r'^$', HomeView.as_view(), name='home'),
+	url(r'^aboutus/', AboutView.as_view(), name='about'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

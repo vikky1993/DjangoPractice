@@ -551,7 +551,7 @@
 										<div class="inner">
 											<figure>
 												<a href="single.html">
-													<img src="images/news/img09.jpg" alt="Sample Article">
+													<img src="{% static 'images/news/img09.jpg' %}" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
@@ -567,7 +567,7 @@
 										<div class="inner">
 											<figure>
 												<a href="single.html">
-													<img src="images/news/img01.jpg" alt="Sample Article">
+													<img src="{% static 'images/news/img01.jpg' %}" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
@@ -773,13 +773,13 @@
 							<div class="aside-body">
 								<div class="featured-author">
 									<div class="featured-author-inner">
-										<div class="featured-author-cover" style="background-image: url('images/news/img15.jpg');">
+										<div class="featured-author-cover" style="background-image: url('{% static 'images/news/img15.jpg' %}');">
 											<div class="badges">
 												<div class="badge-item"><i class="ion-star"></i> Featured</div>
 											</div>
 											<div class="featured-author-center">
 												<figure class="featured-author-picture">
-													<img src="images/img01.jpg" alt="Sample Article">
+													<img src="{% static 'images/img01.jpg' %}" alt="Sample Article">
 												</figure>
 												<div class="featured-author-info">
 													<h2 class="name">John Doe</h2>
@@ -844,7 +844,7 @@
 									<div class="inner">
 										<figure>
 											<a href="single.html">
-												<img src="images/news/img07.jpg" alt="Sample Article">
+												<img src="{% static 'images/news/img07.jpg' %}" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
@@ -856,7 +856,7 @@
 									<div class="inner">
 										<figure>
 											<a href="single.html">
-												<img src="images/news/img14.jpg" alt="Sample Article">
+												<img src="{% static 'images/news/img14.jpg' %}" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
@@ -868,7 +868,7 @@
 									<div class="inner">
 										<figure>
 											<a href="single.html">
-												<img src="images/news/img09.jpg" alt="Sample Article">
+												<img src="{% static 'images/news/img09.jpg' %}" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
@@ -880,7 +880,7 @@
 									<div class="inner">
 										<figure>
 											<a href="single.html">
-												<img src="images/news/img11.jpg" alt="Sample Article">
+												<img src="{% static 'images/news/img11.jpg' %}" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
@@ -892,7 +892,7 @@
 									<div class="inner">
 										<figure>
 											<a href="single.html">
-												<img src="images/news/img06.jpg" alt="Sample Article">
+												<img src="{% static 'images/news/img06.jpg' %}" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
@@ -904,7 +904,7 @@
 									<div class="inner">
 										<figure>
 											<a href="single.html">
-												<img src="images/news/img03.jpg" alt="Sample Article">
+												<img src="{% static 'images/news/img03.jpg' %}" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
@@ -1436,7 +1436,6 @@
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog" style="z-index: 9999;">
           <div class="modal-dialog">
-        
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
@@ -1445,14 +1444,14 @@
               </div>
               <div class="modal-body">
                 <!--<p>Some text in the modal.</p>-->
-                <form action="/index.html">
+                <form method='POST' action=''> {% csrf_token %}
                   <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
+                    <!-- <label for="email">Email address:</label> -->
+                    <input type="email" class="form-control" name="email" placeholder="Your email">
                   </div>
                   <!--<div class="form-group">-->
                   <!--  <label for="subject">Subject:</label>-->
@@ -1460,9 +1459,9 @@
                   <!--</div>-->
                   <div class="form-group">
                     <label for="subject">subject:</label>
-                    <textarea class="form-control" id="subject"></textarea>
+                    <textarea class="form-control" name="subject"></textarea>
                   </div>
-                  <button type="submit" class="btn btn-danger">Submit</button>
+                  <button type="submit" value="Submit" class="btn btn-danger">Submit</button>
                 </form>
               </div>
             </div>
